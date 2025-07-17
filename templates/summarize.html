@@ -1,0 +1,87 @@
+<!-- templates/summarize.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Summarization</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f5f9;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e3a8a;
+    }
+
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    input[type="file"],
+    input[type="submit"] {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+    }
+
+    input[type="submit"] {
+      background-color: #1e3a8a;
+      color: white;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #2749b3;
+    }
+
+    .summary {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #1e3a8a;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📄 Document Summarization</h1>
+
+  <form method="POST" enctype="multipart/form-data">
+    <input type="file" name="pdf_file" accept=".pdf" required>
+    <input type="submit" value="Summarize PDF">
+  </form>
+
+  {% if summary %}
+  <div class="summary">
+    <h3>Summary:</h3>
+    <p>{{ summary }}</p>
+  </div>
+  {% endif %}
+
+  <a href="/">← Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Captioning / Multimodal LLM</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f2f5f9;
+            padding: 40px;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+            align-self: flex-start; /* Align label to the start */
+            width: 100%;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box; /* Include padding in width */
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        input[type="file"],
+        input[type="submit"] {
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+        }
+
+        input[type="file"] {
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            padding: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #1e3a8a;
+            color: white;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2749b3;
+        }
+
+        .result-container {
+            margin-top: 30px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .image-display {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #eee;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            max-height: 300px; /* Limit image height */
+            object-fit: contain; /* Ensure entire image is visible */
+        }
+
+        .llm-response-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: left;
+            white-space: pre-wrap; /* Preserve whitespace and line breaks */
+            word-wrap: break-word; /* Break long words */
+        }
+
+        .error {
+            color: #d32f2f;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #1e3a8a;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🧠 Image Captioning & Understanding (LLM)</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <label for="prompt">Prompt (e.g., "Describe this image in detail.", "What is the main subject?", "Is there a cat in this picture?"):</label>
+        <textarea id="prompt" name="prompt">{{ user_prompt }}</textarea>
+
+        <label for="image_file">Upload Image (PNG, JPG, JPEG, GIF):</label>
+        <input type="file" name="image_file" id="image_file" accept="image/*" required>
+        <input type="submit" value="Get LLM Response">
+    </form>
+
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+
+    {% if llm_response or image_path %}
+    <div class="result-container">
+        {% if image_path %}
+            <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded Image" class="image-display">
+        {% endif %}
+        {% if llm_response %}
+            <h2>AI Response:</h2>
+            <p class="llm-response-text">{{ llm_response }}</p>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <a href="/">← Back to Home</a>
+
+</body>
+</html>

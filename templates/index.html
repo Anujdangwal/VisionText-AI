@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Task Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f2f5f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      padding: 50px 40px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .card h2 {
+      margin-bottom: 15px;
+      font-size: 20px;
+      color: #1e3a8a;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 16px;
+      background-color: #1e3a8a;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .card a:hover {
+      background-color: #2749b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #e2e8f0;
+      color: #555;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to AI Task Hub</h1>
+    <p>Choose a task to get started</p>
+  </header>
+
+  <div class="container">
+    <div class="card">
+      <h2>🧠 Kidney Image Classification</h2>
+      <p>Upload a CT scan and classify it as Normal, Tumor, Cyst, or Stone.</p>
+      <a href="/classify">Go to Classifier</a>
+    </div>
+
+    <div class="card">
+      <h2>🖼️ Image Captioning</h2>
+      <p>Upload any image and get a smart caption generated using deep learning.</p>
+      <a href="/image_captioning">Go to Captioning</a>
+    </div>
+
+    <div class="card">
+      <h2>📄 Document Summarization</h2>
+      <p>Upload a PDF and receive a concise AI-generated summary.</p>
+      <a href="/summarize">Go to Summarizer</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 AI Hub. All rights reserved.
+  </footer>
+
+</body>
+</html>
