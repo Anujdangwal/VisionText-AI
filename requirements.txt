@@ -1,6 +1,6 @@
-﻿# Core framework
+﻿# Web Framework
 flask==3.0.0
-gunicorn==21.2.0  # Recommended for Render deployment
+gunicorn==21.2.0
 
 # Deep Learning
 torch
@@ -9,22 +9,22 @@ torchaudio
 
 # Transformers & NLP
 transformers==4.40.1
-sentencepiece==0.2.0  # Needed for Pegasus tokenizer
+sentencepiece==0.2.0
 accelerate==0.30.1
 
-# PDF reading
-PyMuPDF==1.23.22  # aka "fitz"
+# PDF
+PyMuPDF==1.23.22
 
-# Image processing
+# Image
 Pillow==10.3.0
 opencv-python==4.9.0.80
 
-# CLIP and ViT support
+# CLIP & ViT
 ftfy==6.2.0
 regex==2023.12.25
 scipy==1.13.1
 
-# Tokenizers (GPT-2, etc.)
+# Tokenizers
 tokenizers==0.19.1
 
 # Utilities
@@ -32,8 +32,7 @@ numpy==1.26.4
 tqdm==4.66.4
 python-dotenv==1.0.1
 
-# Groq and Google APIs
-groq>=0.5.0
+# Google Vision and Translation
 google-api-python-client>=2.116.0
 google-auth>=2.29.0
 google-auth-httplib2>=0.2.0
@@ -41,3 +40,6 @@ google-auth-oauthlib>=1.2.0
 google-cloud-vision>=3.7.2
 googletrans==4.0.0-rc1
 grpcio>=1.62.1
+
+# Groq OpenAI-compatible API
+openai>=1.30.1
