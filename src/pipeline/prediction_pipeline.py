@@ -11,7 +11,6 @@ from tensorflow.keras.applications.densenet import preprocess_input
 
 from src.logger import logging
 from src.exception import CustomException
-from src.components.training_pipeline import build_model
 from src.constant import checkpoint_path
 
 
