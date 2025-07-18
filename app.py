@@ -27,7 +27,6 @@ try:
     from src.pipeline.gemini_multimodal_llm import GeminiMultimodalLLM
 except ImportError as e:
     logging.error(f"Failed to import necessary components. Check your 'src' folder structure and file contents. Error: {e}")
-    sys.exit(1)
 
 # Flask app setup
 app = Flask(__name__)
