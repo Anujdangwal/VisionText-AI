@@ -24,7 +24,7 @@ class PredictionPipeline:
         try:
             self.class_labels = ['Cyst', 'Normal', 'Stone', 'Tumor']
             self.image_size = (256, 256)
-            self.checkpoint_path = checkpoint_path
+            self.checkpoint_path = os.path.join("model_checkpoint", "best_model.h5")
 
             if os.path.exists(self.checkpoint_path):
                 logging.info(f"Loading classification model from: {self.checkpoint_path}")
