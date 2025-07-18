@@ -32,4 +32,4 @@ RUN pip install --upgrade pip \
 EXPOSE 10000
 
 # Run the app with gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:10000", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:${PORT}", "app:app"]
