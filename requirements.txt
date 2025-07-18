@@ -3,7 +3,7 @@ flask==3.0.0
 gunicorn==21.2.0  # Recommended for Render deployment
 
 # Deep Learning
-torch==2.7.1
+torch==2.6.0
 torchvision==0.21.0
 torchaudio==2.6.0
 
