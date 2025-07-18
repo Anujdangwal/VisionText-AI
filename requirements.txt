@@ -33,3 +33,7 @@ tqdm==4.66.4
 
 # Optional: for logging, file handling
 python-dotenv==1.0.1
+
+
+# groq
+groq
