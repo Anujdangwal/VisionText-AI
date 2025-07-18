@@ -1,41 +1,45 @@
-﻿# ================= Core Framework =================
+﻿# Core framework
 flask==3.0.0
-gunicorn==21.2.0  # WSGI server for production (Render)
+gunicorn==21.2.0  # Recommended for Render deployment
 
-# ================= Deep Learning ==================
-torch==2.2.2         # Latest stable version compatible with torchvision 0.17.2+
+# Deep Learning (PyTorch ecosystem)
+torch==2.2.2
 torchvision==0.17.2
 torchaudio==2.2.2
 
-# ================= Transformers & NLP =============
+# Transformers & NLP
 transformers==4.40.1
-sentencepiece         # Needed for Pegasus tokenizer
+sentencepiece==0.2.0
 accelerate==0.30.1
-tokenizers==0.19.1    # Compatible with Transformers 4.40.1
 
-# ================= Image Processing ===============
+# PDF reading
+PyMuPDF==1.23.22  # aka "fitz"
+
+# Image processing
 Pillow==10.3.0
 opencv-python==4.9.0.80
 
-# ================= PDF Text Extraction =============
-PyMuPDF==1.23.22  # aka fitz
-
-# ================= CLIP / ViT / Utils ==============
+# CLIP and ViT support
 ftfy==6.2.0
 regex==2023.12.25
 scipy==1.13.1
+
+# Tokenizers
+tokenizers==0.19.1
+
+# Utilities
 numpy==1.26.4
 tqdm==4.66.4
 python-dotenv==1.0.1
 
-# ================= Groq API ========================
-groq>=0.5.0  # OpenAI-compatible client for Groq
+# Translation (replaces googletrans)
+deep-translator==1.11.4
 
-# ================= Google Cloud APIs ===============
+# Groq & Google Cloud
+groq>=0.5.0
+grpcio>=1.62.1
 google-api-python-client>=2.116.0
 google-auth>=2.29.0
 google-auth-httplib2>=0.2.0
 google-auth-oauthlib>=1.2.0
 google-cloud-vision>=3.7.2
-grpcio>=1.62.1
-googletrans==4.0.0-rc1
