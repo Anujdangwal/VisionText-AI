@@ -1,6 +1,7 @@
 # app.py
-
 import os
+TF_ENABLE_ONEDNN_OPTS=0
+
 import sys
 import logging
 from flask import Flask, request, render_template, jsonify, redirect, url_for
@@ -51,44 +52,37 @@ from src.pipeline.prediction_pipeline import PredictionPipeline
 classifier = PredictionPipeline() 
 logging.info("PredictionPipeline initialized successfully.")
 
+# --- CT Kidney Classification Route ---
 @app.route('/classify', methods=['GET', 'POST'])
-def classify_page():
-    prediction_result = None
-    image_display_path = None
-
+def predict_page():
     if request.method == 'POST':
         try:
             file = request.files.get('file')
             if not file or file.filename == '':
-                logging.warning("No file uploaded for classification.")
-                prediction_result = "No file selected."
-                return render_template('classify.html', prediction=prediction_result)
+                logging.warning("No file uploaded.")
+                return render_template('classify.html', prediction="No file selected.")
 
-            if not allowed_file(file.filename, ALLOWED_IMAGE_EXTENSIONS):
-                logging.warning(f"Invalid file type for classification: {file.filename}")
-                prediction_result = "Invalid file type. Please upload an image (png, jpg, jpeg, gif)."
-                return render_template('classify.html', prediction=prediction_result)
-
+            # Save uploaded image
             filename = secure_filename(file.filename)
-            uploaded_image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-            file.save(uploaded_image_path)
-            logging.info(f"Received image for classification: {uploaded_image_path}")
+            save_dir = os.path.join('static', 'uploads')
+            os.makedirs(save_dir, exist_ok=True)
+            file_path = os.path.join(save_dir, filename)
+            file.save(file_path)
 
-            # FIX: Ensure forward slashes for the URL path
-            image_display_path = f"uploaded/{filename}" 
+            # ✅ Use global classifier instance (model already loaded once)
+            prediction = classifier.predict(file_path)
 
-            if PredictionPipeline:
-                predictor = PredictionPipeline()
-                prediction = predictor.predict(uploaded_image_path)
-                prediction_result = f"Predicted Class: {prediction}"
-            else:
-                prediction_result = "PredictionPipeline is not available. Classification functionality is disabled."
-                logging.error("PredictionPipeline class not found. Cannot perform classification.")
+            # image_path for HTML must be relative to 'static' directory
+            relative_path = f"uploads/{filename}"
+
+            return render_template('classify.html', prediction=prediction, image_path=relative_path)
 
         except Exception as e:
-            logging.exception("Error during classification.")
-            prediction_result = f"Error: {str(e)}"
-    return render_template('classify.html', prediction=prediction_result, image_path=image_display_path)
+            logging.error("Prediction failed", exc_info=True)
+            return render_template('classify.html', prediction=f"Error: {str(e)}")
+
+    return render_template('classify.html')
+
 
 @app.route('/summarize', methods=['GET', 'POST'])
 def summarize_page():

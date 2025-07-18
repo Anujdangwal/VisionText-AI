@@ -10,4 +10,4 @@ IMAGE_DIR = os.path.join(ARTIFACT_FOLDER, r"CT-KIDNEY-DATASET-Normal-Cyst-Tumor-
 KIDNEY_CSV_PATH = os.path.join(ARTIFACT_FOLDER, "kidneyData.csv")
 
 # Example
-checkpoint_path = os.path.join("model_checkpoint", "best_model.pth")
+checkpoint_path = os.path.join("model_checkpoint", "best_model.h5")

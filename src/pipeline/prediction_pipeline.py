@@ -1,44 +1,38 @@
 import os
 import sys
-import torch
-from torchvision import transforms
+import logging
+import numpy as np
 from PIL import Image
+import tensorflow as tf
+from tensorflow.keras.models import load_model
+from tensorflow.keras.preprocessing.image import img_to_array
+from tensorflow.keras.applications.densenet import preprocess_input
+
 
 from src.logger import logging
 from src.exception import CustomException
 from src.components.training_pipeline import build_model
 from src.constant import checkpoint_path
 
-# --- Kidney CT Classification Pipeline ---
+
+# --- Kidney CT Classification Pipeline (TensorFlow Version) ---
 class PredictionPipeline:
     """
-    Handles image classification prediction using a custom PyTorch DenseNet model.
-    Loads a pre-trained model from checkpoint.
+    Handles image classification prediction using a custom TensorFlow DenseNet model.
+    Loads a pre-trained model from .h5 or SavedModel format.
     """
     def __init__(self):
         try:
-            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
             self.class_labels = ['Cyst', 'Normal', 'Stone', 'Tumor']
-            self.model = build_model(num_classes=len(self.class_labels))
+            self.image_size = (256, 256)
+            self.checkpoint_path = checkpoint_path
 
-            if os.path.exists(checkpoint_path):
-                logging.info(f"Loading classification model from checkpoint: {checkpoint_path}")
-                state_dict = torch.load(checkpoint_path, map_location=self.device)
-                self.model.load_state_dict(state_dict)
-                logging.info("Classification model loaded successfully.")
+            if os.path.exists(self.checkpoint_path):
+                logging.info(f"Loading classification model from: {self.checkpoint_path}")
+                self.model = load_model(self.checkpoint_path)
+                logging.info("TensorFlow classification model loaded successfully.")
             else:
-                raise FileNotFoundError(f"Model checkpoint not found at {checkpoint_path}. Please train the model first.")
-
-            self.model.to(self.device)
-            self.model.eval()
-
-            self.transform = transforms.Compose([
-                transforms.Resize((256, 256)),
-                transforms.ToTensor(),
-                transforms.Normalize([0.485, 0.456, 0.406],
-                                     [0.229, 0.224, 0.225])
-            ])
-            logging.info("PredictionPipeline initialized successfully.")
+                raise FileNotFoundError(f"Model not found at {self.checkpoint_path}. Please train and export the model.")
 
         except Exception as e:
             logging.error("Error during PredictionPipeline initialization", exc_info=True)
@@ -46,19 +40,23 @@ class PredictionPipeline:
 
     def predict(self, image_path: str) -> str:
         """
-        Performs inference on a given image using the loaded model.
+        Performs inference on a given image using the loaded TensorFlow model.
         """
         try:
             if not os.path.exists(image_path):
                 raise FileNotFoundError(f"Image file not found: {image_path}")
 
+            # Load and preprocess the image
             image = Image.open(image_path).convert("RGB")
-            image = self.transform(image).unsqueeze(0).to(self.device)
+            image = image.resize(self.image_size)
+            image = img_to_array(image)
+            image = preprocess_input(image)
+            image = np.expand_dims(image, axis=0)  # Add batch dimension
 
-            with torch.no_grad():
-                output = self.model(image)
-                _, predicted = torch.max(output, 1)
-                predicted_label = self.class_labels[predicted.item()]
+            # Run inference
+            predictions = self.model.predict(image)
+            predicted_class = np.argmax(predictions, axis=1)[0]
+            predicted_label = self.class_labels[predicted_class]
 
             logging.info(f"Predicted label for {os.path.basename(image_path)}: {predicted_label}")
             return predicted_label
