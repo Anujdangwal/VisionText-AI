@@ -13,5 +13,4 @@ venv/
 .cache/
 medenv/
 .github/
-tests/
 static/
