@@ -12,6 +12,6 @@ def test_home_page(client):
     assert response.status_code == 200
     assert b"Welcome" in response.data  # Change according to your actual homepage content
 
-def test_upload_route_exists(client):
-    response = client.get('/upload')
-    assert response.status_code in [200, 302]  # Depending on how you handle redirects
+def test_classify_route_exists(client):
+    response = client.get('/classify')
+    assert response.status_code in [200, 302]
