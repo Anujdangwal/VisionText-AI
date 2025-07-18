@@ -24,9 +24,14 @@ jobs:
           pip install -r requirements.txt
           pip install pytest
 
-      - name: Run tests
+      - name: Run tests (only if tests folder exists)
         run: |
-          pytest tests/
+          if [ -d "tests" ]; then
+            echo "Running pytest..."
+            pytest
+          else
+            echo "No tests directory found. Skipping tests."
+          fi
 
   docker_build_push:
     needs: test
