@@ -37,4 +37,7 @@ python-dotenv==1.0.1
 
 # groq
 groq
-google
+google-cloud-vision
+google-api-python-client
+google-auth
+googletrans==4.0.0-rc1
