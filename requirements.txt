@@ -45,3 +45,6 @@ google-auth-oauthlib>=1.2.0
 google-cloud-vision>=3.7.2
 
 google.generativeai
+
+# tensorflow
+tensorflow
