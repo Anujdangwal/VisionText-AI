@@ -47,6 +47,10 @@ def allowed_file(filename, allowed_extensions):
 def home():
     return render_template('index.html')
 
+from src.pipeline.prediction_pipeline import PredictionPipeline
+classifier = PredictionPipeline() 
+logging.info("PredictionPipeline initialized successfully.")
+
 @app.route('/classify', methods=['GET', 'POST'])
 def classify_page():
     prediction_result = None
