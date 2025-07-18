@@ -32,43 +32,34 @@ class PredictionPipeline:
     Loads a pre-trained model or triggers training if no checkpoint is found.
     """
     def __init__(self):
-        try:
-            self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-            self.class_labels = ['Cyst', 'Normal', 'Stone', 'Tumor'] # IMPORTANT: Match your actual dataset class names!
+    try:
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        self.class_labels = ['Cyst', 'Normal', 'Stone', 'Tumor']
+        self.model = build_model(num_classes=len(self.class_labels))
 
-            # Build the model architecture (DenseNet121)
-            self.model = build_model(num_classes=len(self.class_labels))
+        if os.path.exists(checkpoint_path):
+            logging.info(f"Loading classification model from checkpoint: {checkpoint_path}")
+            state_dict = torch.load(checkpoint_path, map_location=self.device)
+            self.model.load_state_dict(state_dict)
+            logging.info("Classification model loaded successfully.")
+        else:
+            raise FileNotFoundError(f"Model checkpoint not found at {checkpoint_path}. Please ensure the model is trained and checkpoint is present.")
 
-            # Load trained model weights or start training if no checkpoint exists
-            if os.path.exists(checkpoint_path):
-                logging.info(f"Loading classification model from checkpoint: {checkpoint_path}")
-                # Use map_location to ensure it loads correctly regardless of CUDA availability
-                # weights_only=True is for torch.load, not load_state_dict
-                state_dict = torch.load(checkpoint_path, map_location=self.device)
-                self.model.load_state_dict(state_dict)
-                logging.info("Classification model loaded successfully.")
-            else:
-                logging.warning(f"Classification model checkpoint not found at {checkpoint_path}. Starting training pipeline...")
-                # Ensure TrainingPipeline is correctly set up to train and save a model
-                trainer = TrainingPipeline() # This will use IMAGE_DIR from src.constant
-                self.model = trainer.start_training() # This should return the trained model
-                logging.info("Classification model training completed and loaded.")
+        self.model.to(self.device)
+        self.model.eval()
 
-            self.model.to(self.device)
-            self.model.eval() # Set model to evaluation mode
+        self.transform = transforms.Compose([
+            transforms.Resize((256, 256)),
+            transforms.ToTensor(),
+            transforms.Normalize([0.485, 0.456, 0.406],
+                                 [0.229, 0.224, 0.225])
+        ])
+        logging.info("PredictionPipeline initialized successfully for classification.")
 
-            # Define image transformation for inference
-            self.transform = transforms.Compose([
-                transforms.Resize((256, 256)),
-                transforms.ToTensor(),
-                transforms.Normalize([0.485, 0.456, 0.406],
-                                     [0.229, 0.224, 0.225])
-            ])
-            logging.info("PredictionPipeline initialized successfully for classification.")
+    except Exception as e:
+        logging.error("Error during PredictionPipeline initialization", exc_info=True)
+        raise CustomException(f"Failed to initialize PredictionPipeline: {e}", sys)
 
-        except Exception as e:
-            logging.error("Error during PredictionPipeline initialization", exc_info=True)
-            raise CustomException(f"Failed to initialize PredictionPipeline: {e}", sys)
 
     def predict(self, image_path: str) -> str:
         """
