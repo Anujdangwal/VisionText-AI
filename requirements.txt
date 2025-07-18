@@ -30,13 +30,9 @@ tokenizers==0.19.1
 # Utilities
 numpy==1.26.4
 tqdm==4.66.4
-
-# Optional: for logging, file handling
 python-dotenv==1.0.1
 
-
-# groq
-gunicorn
+# Groq and Google APIs
 groq>=0.5.0
 google-api-python-client>=2.116.0
 google-auth>=2.29.0
@@ -45,9 +41,3 @@ google-auth-oauthlib>=1.2.0
 google-cloud-vision>=3.7.2
 googletrans==4.0.0-rc1
 grpcio>=1.62.1
-
-# google
-google-cloud-vision
-google-api-python-client
-google-auth
-googletrans==4.0.0-rc1
