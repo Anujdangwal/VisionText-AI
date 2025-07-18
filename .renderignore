@@ -1,6 +1,4 @@
 # .renderignore
-*.pt
-*.pth
 *.bin
 __pycache__/
 artifacts/
