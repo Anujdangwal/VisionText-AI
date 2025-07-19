@@ -31,5 +31,5 @@ RUN pip install --upgrade pip \
 # Expose the port gunicorn will use
 EXPOSE 10000
 
-# Run the app with gunicorn
-CMD ["gunicorn", "--bind", "0.0.0.0:${PORT}", "app:app"]
+# Run the app with gunicorn using the PORT environment variable
+CMD sh -c "gunicorn --bind 0.0.0.0:${PORT} app:app"
