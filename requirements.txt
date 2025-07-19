@@ -1,12 +1,20 @@
 Flask==3.1.1
 gunicorn==21.2.0
-groq==0.1.5
-numpy>=1.25.0
+
+# TensorFlow CPU-only version (2.16.1 is latest stable as of July 2025)
+tensorflow-cpu==2.16.1
+
+# PDF and image support
+fitz==0.0.1.dev2        # thin wrapper; if error, use PyMuPDF instead
 Pillow==11.3.0
+reportlab==4.4.2
+
+# Utilities
+numpy==1.24.3
 protobuf==4.25.3
 pytest==7.4.4
 python-dotenv==1.1.1
-reportlab==4.4.2
-tensorflow-cpu==2.15.0
 Werkzeug==3.1.3
-PyMuPDF==1.24.2
+
+# Groq API client (install from PyPI)
+groq==0.30.0
