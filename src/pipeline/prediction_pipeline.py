@@ -10,15 +10,14 @@ from tensorflow.keras.applications.densenet import preprocess_input
 
 from src.logger import logging
 from src.exception import CustomException
-
+from src.components.pdf_reader import PDFReader
+from src.pipeline.groq_llm_model import GroqLLM
 
 # --- PDF Summarization Function ---
 def summarize_pdf_document(pdf_path: str, model_name: str = "llama3-8b-8192") -> str:
     """
     Summarizes a PDF document using a Groq LLM.
     """
-    from src.pipeline.groq_llm_model import GroqLLM
-    from src.utils.pdf_reader import PDFReader
 
     if not os.path.exists(pdf_path):
         return f"Error: PDF file not found at {pdf_path}"

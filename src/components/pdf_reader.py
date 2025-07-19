@@ -4,16 +4,9 @@ import fitz  # PyMuPDF
 import os
 
 class PDFReader:
-    """
-    A class to read and extract text from PDF documents.
-    """
+   
     def __init__(self, pdf_path: str):
-        """
-        Initializes the PDFReader with the path to the PDF file.
-
-        Args:
-            pdf_path (str): The path to the PDF file.
-        """
+        
         self.pdf_path = pdf_path
         self._doc = None # To hold the fitz.Document object
 
