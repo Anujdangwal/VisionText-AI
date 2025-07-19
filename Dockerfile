@@ -20,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Copy and install dependencies first (to leverage Docker cache)
 COPY requirements.txt requirements.txt
 RUN pip install --upgrade pip && \
+    && pip install setuptools wheel \
     pip install --no-cache-dir -r requirements.txt && \
     pip install gunicorn
 
