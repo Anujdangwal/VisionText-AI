@@ -1,11 +1,8 @@
-# Use official Python base image
 FROM python:3.12-slim
 
-# Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Set working directory
 WORKDIR /app
 
 # Install system dependencies
@@ -20,16 +17,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     zlib1g-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy project files
+# Copy and install dependencies first (to leverage Docker cache)
+COPY requirements.txt requirements.txt
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt && \
+    pip install gunicorn
+
+# Copy the rest of the project files
 COPY . .
 
-# Upgrade pip and install dependencies
-RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r requirements.txt \
-    && pip install gunicorn
-
-# Expose the port gunicorn will use
 EXPOSE 10000
 
-# Run the app with gunicorn using the PORT environment variable
-CMD sh -c "gunicorn --bind 0.0.0.0:${PORT} app:app"
+# Use JSON syntax for CMD (safer with signals)
+CMD ["gunicorn", "--bind", "0.0.0.0:10000", "app:app"]
