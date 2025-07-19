@@ -1,4 +1,4 @@
-# Use official Python base image
+# Base image with Python 3.12
 FROM python:3.12-slim
 
 # Set environment variables
@@ -18,24 +18,24 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxml2-dev \
     libxslt1-dev \
     zlib1g-dev \
-    libgl1-mesa-glx \
     curl \
     git \
     && rm -rf /var/lib/apt/lists/*
 
-# ------------------------------ 🔧 FIX HERE ------------------------------
-# Install build backend tools *before* installing requirements.txt
-RUN pip install --upgrade pip setuptools wheel
+# 🔧 Install essential Python build tools early
+RUN pip install --upgrade pip setuptools wheel build
 
-# Copy and install dependencies
+# Copy requirements
 COPY requirements.txt .
+
+# 🔁 Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy all project files
+# Copy project files
 COPY . .
 
-# Expose the port your Flask app uses
+# Expose the port Flask will run on
 EXPOSE $PORT
 
-# Start the app with Gunicorn
+# Run app with Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:10000", "app:app"]
