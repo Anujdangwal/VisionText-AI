@@ -6,3 +6,4 @@ Pillow==11.3.0
 tensorflow-cpu==2.15.0
 PyMuPDF==1.23.7
 reportlab==4.4.2
+groq
