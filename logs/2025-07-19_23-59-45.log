@@ -1,0 +1,10 @@
+2025-07-19 23:59:46,507 - root - INFO - All custom module imports succeeded.
+2025-07-19 23:59:46,516 - werkzeug - WARNING -  * Debugger is active!
+2025-07-19 23:59:46,520 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-19 23:59:46,763 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:59:46] "GET / HTTP/1.1" 200 -
+2025-07-19 23:59:48,348 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:59:48] "GET /image_captioning HTTP/1.1" 200 -
+2025-07-19 23:59:54,085 - root - INFO - Image received for LLM processing: static\uploaded\CTkidneystone.jpg
+2025-07-19 23:59:54,086 - root - INFO - GeminiMultimodalLLM initialized with model: gemini-1.5-flash
+2025-07-19 23:59:59,601 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:59:59] "POST /image_captioning HTTP/1.1" 200 -
+2025-07-19 23:59:59,657 - werkzeug - INFO - 127.0.0.1 - - [19/Jul/2025 23:59:59] "GET /static/uploaded/CTkidneystone.jpg HTTP/1.1" 200 -
+2025-07-20 00:00:12,440 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\logging\\__init__.py', reloading

@@ -12,9 +12,6 @@ from dotenv import load_dotenv
 # ---------------- Load Environment ----------------
 load_dotenv()
 
-# ---------------- Logging Setup ----------------
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-
 # ---------------- Add Project Root ----------------
 project_root = os.path.abspath(os.path.dirname(__file__))
 if project_root not in sys.path:
@@ -22,8 +19,6 @@ if project_root not in sys.path:
 
 # ---------------- Import Custom Modules ----------------
 try:
-    from src.components.pdf_reader import PDFReader
-    from src.pipeline.groq_llm_model import GroqLLM
     from src.pipeline.prediction_pipeline import summarize_pdf_document
     from src.pipeline.gemini_multimodal_llm import GeminiMultimodalLLM
     logging.info("All custom module imports succeeded.")
