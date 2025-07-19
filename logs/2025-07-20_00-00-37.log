@@ -1,7 +1,0 @@
-2025-07-20 00:00:37,477 - root - ERROR - Module import failed. Check for invalid 'frontend' references or missing files.
-Traceback (most recent call last):
-  File "E:\projects\medical bot\app.py", line 22, in <module>
-    from src.pipeline.prediction_pipeline import summarize_pdf_document
-  File "E:\projects\medical bot\src\pipeline\prediction_pipeline.py", line 14, in <module>
-    from src.pipeline.groq_llm_model import GroqLLM
-ModuleNotFoundError: No module named 'src.pipeline.groq_llm_model'
