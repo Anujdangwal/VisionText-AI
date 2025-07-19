@@ -17,13 +17,10 @@ if project_root not in sys.path:
     sys.path.insert(0, project_root)
 
 # Import our custom classes/functions
-try:
-    from src.components.pdf_reader import PDFReader
-    from src.pipeline.groq_llm_model import GroqLLM
-    from src.pipeline.prediction_pipeline import summarize_pdf_document
-    from src.pipeline.gemini_multimodal_llm import GeminiMultimodalLLM
-except ImportError as e:
-    logging.error(f"Failed to import necessary components. Check your 'src' folder structure and file contents. Error: {e}")
+from src.components.pdf_reader import PDFReader
+from src.pipeline.groq_llm_model import GroqLLM
+from src.pipeline.prediction_pipeline import summarize_pdf_document
+from src.pipeline.gemini_multimodal_llm import GeminiMultimodalLLM
 
 # Flask app setup
 app = Flask(__name__)
