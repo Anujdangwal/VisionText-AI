@@ -7,19 +7,6 @@ import logging
 from flask import Flask, request, render_template, jsonify, redirect, url_for
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
-import gdown
-
-# downloading model to ignore large files lfs
-def download_model():
-    model_path = "model_checkpoint/best_model.h5"
-    if not os.path.exists(model_path):
-        os.makedirs(os.path.dirname(model_path), exist_ok=True)
-        print("Downloading model...")
-        file_id = "15mQttYXzoomvnscjEAinTS5Fee69Okab"
-        gdown.download(id=file_id, output=model_path, quiet=False)
-
-download_model()
-
 
 # Load environment variables (including GROQ_API_KEY and GOOGLE_API_KEY)
 load_dotenv()
@@ -60,38 +47,6 @@ def home():
 from src.pipeline.prediction_pipeline import PredictionPipeline
 classifier = PredictionPipeline() 
 logging.info("PredictionPipeline initialized successfully.")
-
-# --- CT Kidney Classification Route ---
-@app.route('/classify', methods=['GET', 'POST'])
-def predict_page():
-    if request.method == 'POST':
-        try:
-            file = request.files.get('file')
-            if not file or file.filename == '':
-                logging.warning("No file uploaded.")
-                return render_template('classify.html', prediction="No file selected.")
-
-            # Save uploaded image
-            filename = secure_filename(file.filename)
-            save_dir = os.path.join('static', 'uploads')
-            os.makedirs(save_dir, exist_ok=True)
-            file_path = os.path.join(save_dir, filename)
-            file.save(file_path)
-
-            # ✅ Use global classifier instance (model already loaded once)
-            prediction = classifier.predict(file_path)
-
-            # image_path for HTML must be relative to 'static' directory
-            relative_path = f"uploads/{filename}"
-
-            return render_template('classify.html', prediction=prediction, image_path=relative_path)
-
-        except Exception as e:
-            logging.error("Prediction failed", exc_info=True)
-            return render_template('classify.html', prediction=f"Error: {str(e)}")
-
-    return render_template('classify.html')
-
 
 @app.route('/summarize', methods=['GET', 'POST'])
 def summarize_page():
