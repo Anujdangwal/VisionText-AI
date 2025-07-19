@@ -1,12 +1,12 @@
 fitz==0.0.1.dev2
 Flask==3.1.1
-groq==0.21.0
+groq
 numpy==1.24.3
 Pillow==11.3.0
 protobuf==4.25.3
 pytest==7.4.4
 python-dotenv==1.1.1
 reportlab==4.4.2
-tensorflow==2.13.0
+tensorflow
 Werkzeug==3.1.3
 gunicorn==21.2.0
