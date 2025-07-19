@@ -44,10 +44,6 @@ def allowed_file(filename, allowed_extensions):
 def home():
     return render_template('index.html')
 
-from src.pipeline.prediction_pipeline import PredictionPipeline
-classifier = PredictionPipeline() 
-logging.info("PredictionPipeline initialized successfully.")
-
 
 #pdf summarizer
 @app.route('/summarize', methods=['GET', 'POST'])
