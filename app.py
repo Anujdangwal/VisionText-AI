@@ -8,8 +8,21 @@ from flask import Flask, request, render_template, jsonify, redirect, url_for
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 
-# Set up logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# downloading model to ignore large files lfs
+import gdown
+
+def download_model():
+    model_path = "model_checkpoint/best_model.h5"
+    if not os.path.exists(model_path):
+        os.makedirs(os.path.dirname(model_path), exist_ok=True)
+        print("Downloading model...")
+        file_id = "1a2b3c4D5EfGhIjK6LmNoPQRstUv"  # replace with your actual ID
+        url = f"https://drive.google.com/uc?id={file_id}"
+        gdown.download(url, model_path, quiet=False)
+
+download_model()
+
 
 # Load environment variables (including GROQ_API_KEY and GOOGLE_API_KEY)
 load_dotenv()
