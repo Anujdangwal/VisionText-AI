@@ -1,0 +1,10 @@
+2025-07-20 00:53:01,683 - root - INFO - All custom module imports succeeded.
+2025-07-20 00:53:01,703 - werkzeug - WARNING -  * Debugger is active!
+2025-07-20 00:53:01,713 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-20 00:53:19,628 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 00:53:19] "GET / HTTP/1.1" 200 -
+2025-07-20 00:53:20,091 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 00:53:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-20 00:53:24,987 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 00:53:24] "GET /image_captioning HTTP/1.1" 200 -
+2025-07-20 00:53:34,206 - root - INFO - Image received for LLM processing: static\uploaded\1000038428.jpg
+2025-07-20 00:53:34,208 - root - INFO - GeminiMultimodalLLM initialized with model: gemini-1.5-flash
+2025-07-20 00:53:40,577 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 00:53:40] "POST /image_captioning HTTP/1.1" 200 -
+2025-07-20 00:53:40,650 - werkzeug - INFO - 127.0.0.1 - - [20/Jul/2025 00:53:40] "GET /static/uploaded/1000038428.jpg HTTP/1.1" 200 -
