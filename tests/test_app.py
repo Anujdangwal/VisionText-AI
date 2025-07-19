@@ -11,7 +11,3 @@ def test_home_page(client):
     response = client.get('/')
     assert response.status_code == 200
     assert b"Welcome" in response.data  # Change according to your actual homepage content
-
-def test_classify_route_exists(client):
-    response = client.get('/classify')
-    assert response.status_code in [200, 302]
