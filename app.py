@@ -7,19 +7,16 @@ import logging
 from flask import Flask, request, render_template, jsonify, redirect, url_for
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
-
-
-# downloading model to ignore large files lfs
 import gdown
 
+# downloading model to ignore large files lfs
 def download_model():
     model_path = "model_checkpoint/best_model.h5"
     if not os.path.exists(model_path):
         os.makedirs(os.path.dirname(model_path), exist_ok=True)
         print("Downloading model...")
-        file_id = "1a2b3c4D5EfGhIjK6LmNoPQRstUv"  # replace with your actual ID
-        url = f"https://drive.google.com/uc?id={"1xYnhdaGx1rn2LKtGIPCaD46CGH"}"
-        gdown.download(url, model_path, quiet=False)
+        file_id = "15mQttYXzoomvnscjEAinTS5Fee69Okab"
+        gdown.download(id=file_id, output=model_path, quiet=False)
 
 download_model()
 
