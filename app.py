@@ -20,7 +20,7 @@ if project_root not in sys.path:
 try:
     from src.components.pdf_reader import PDFReader
     from src.pipeline.groq_llm_model import GroqLLM
-    from src.pipeline.prediction_pipeline import PredictionPipeline, summarize_pdf_document
+    from src.pipeline.prediction_pipeline import summarize_pdf_document
     from src.pipeline.gemini_multimodal_llm import GeminiMultimodalLLM
 except ImportError as e:
     logging.error(f"Failed to import necessary components. Check your 'src' folder structure and file contents. Error: {e}")
@@ -48,6 +48,8 @@ from src.pipeline.prediction_pipeline import PredictionPipeline
 classifier = PredictionPipeline() 
 logging.info("PredictionPipeline initialized successfully.")
 
+
+#pdf summarizer
 @app.route('/summarize', methods=['GET', 'POST'])
 def summarize_page():
     summary = None
