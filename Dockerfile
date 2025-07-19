@@ -1,19 +1,22 @@
-# Use official slim Python base image
+# Base image
 FROM python:3.12-slim
 
-# Set environment variables
+# Avoid Python bytecode + buffered logs
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 ENV PORT=10000
 
-# Set working directory
 WORKDIR /app
 
-# Install OS-level dependencies
+# System deps
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    gcc \
     libgl1-mesa-glx \
+    libglib2.0-0 \
+    libxrender1 \
+    libsm6 \
+    libxext6 \
+    gcc \
     libffi-dev \
     libssl-dev \
     libxml2-dev \
@@ -22,23 +25,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Pre-install modern pip, setuptools, and wheel to support pyproject.toml-based builds
-RUN pip install --upgrade pip setuptools wheel
-
-# Copy requirements.txt separately for Docker layer caching
+# Install pip deps
 COPY requirements.txt .
-
-# Install Python dependencies from requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
-# (Optional) Install Gunicorn if not already in requirements.txt
-RUN pip install gunicorn
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r requirements.txt
 
 # Copy rest of the app
 COPY . .
 
-# Expose port
 EXPOSE $PORT
 
-# Start the app with gunicorn (adjust module path if needed)
+# Start with Gunicorn
 CMD ["gunicorn", "--bind", "0.0.0.0:10000", "app:app"]
