@@ -1,5 +1,11 @@
 import pytest
-from app import app  # Assuming your Flask app is named "app" in app.py
+import sys
+import os
+
+# Add the root directory so it can find `app.py`
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from app import app
 
 @pytest.fixture
 def client():
@@ -10,4 +16,4 @@ def client():
 def test_home_page(client):
     response = client.get('/')
     assert response.status_code == 200
-    assert b"Welcome" in response.data  # Change according to your actual homepage content
+    assert b"Welcome" in response.data 
