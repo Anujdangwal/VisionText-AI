@@ -1,0 +1,20 @@
+2025-07-22 13:37:05,757 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:37:05,764 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 13:37:05,766 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 13:37:18,881 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:37:18] "GET / HTTP/1.1" 200 -
+2025-07-22 13:37:19,850 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:37:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-22 13:37:21,683 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:37:21] "GET /summarize HTTP/1.1" 200 -
+2025-07-22 13:37:26,742 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:37:26,859 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:37:27,417 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:37:27,886 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-22 13:37:27,887 - root - ERROR - Error getting completion from Groq LLM: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-07-22 13:37:27,891 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:37:27,894 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:37:27] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:37:38,029 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:37:38,097 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:37:38,470 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:37:38,581 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-22 13:37:38,581 - root - ERROR - Error getting completion from Groq LLM: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-07-22 13:37:38,581 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:37:38,605 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:37:38] "POST /summarize HTTP/1.1" 200 -

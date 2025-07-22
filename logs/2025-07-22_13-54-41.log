@@ -1,0 +1,30 @@
+2025-07-22 13:54:44,186 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:54:44,186 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 13:54:44,186 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 13:54:50,188 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:54:50,347 - root - WARNING - Document is very long (2956 chars). Truncating.
+2025-07-22 13:54:50,347 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:54:50,823 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:54:51,555 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 13:54:51,557 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:54:51,577 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:54:51] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:57:12,950 - root - INFO - Received PDF for summarization: static\uploaded\Deep_Learning_assignment.pdf
+2025-07-22 13:57:12,960 - root - WARNING - Document is very long (208 chars). Truncating.
+2025-07-22 13:57:12,960 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:57:13,510 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:57:14,077 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 13:57:14,078 - root - INFO - Deleted uploaded file: static\uploaded\Deep_Learning_assignment.pdf
+2025-07-22 13:57:14,078 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:57:14] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:57:30,155 - root - INFO - Received PDF for summarization: static\uploaded\Neural_Network_assign.pdf
+2025-07-22 13:57:30,155 - root - WARNING - Document is very long (222 chars). Truncating.
+2025-07-22 13:57:30,155 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:57:30,634 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:57:31,262 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 13:57:31,265 - root - INFO - Deleted uploaded file: static\uploaded\Neural_Network_assign.pdf
+2025-07-22 13:57:31,268 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:57:31] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:58:09,998 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading
+2025-07-22 13:58:10,013 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading
+2025-07-22 13:58:10,047 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading
+2025-07-22 13:58:10,097 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\pytesseract\\__init__.py', reloading
+2025-07-22 13:58:10,097 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\pytesseract\\pytesseract.py', reloading
+2025-07-22 13:58:10,131 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\packaging\\version.py', reloading

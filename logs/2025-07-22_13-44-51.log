@@ -1,0 +1,41 @@
+2025-07-22 13:44:53,790 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:44:53,790 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 13:44:53,790 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 13:44:53,911 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:44:53] "GET /summarize HTTP/1.1" 200 -
+2025-07-22 13:44:59,030 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:44:59,164 - root - WARNING - Document is very long (2956 chars). Truncating.
+2025-07-22 13:44:59,164 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:44:59,756 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:45:00,123 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-22 13:45:00,124 - root - ERROR - Error getting completion from Groq LLM: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-07-22 13:45:00,128 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:45:00,132 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:45:00] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:45:05,700 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:45:05,817 - root - WARNING - Document is very long (2956 chars). Truncating.
+2025-07-22 13:45:05,817 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:45:06,398 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:45:06,482 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-22 13:45:06,483 - root - ERROR - Error getting completion from Groq LLM: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-07-22 13:45:06,487 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:45:06,492 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:45:06] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:46:18,928 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:46:18,995 - root - WARNING - Document is very long (2956 chars). Truncating.
+2025-07-22 13:46:18,995 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:46:19,367 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:46:19,467 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-22 13:46:19,467 - root - ERROR - Error getting completion from Groq LLM: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-07-22 13:46:19,469 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:46:19,473 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:46:19] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:47:53,181 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\types\\chat\\chat_completion_tool_choice_option_param.py', reloading
+2025-07-22 13:47:53,185 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\types\\chat\\chat_completion_named_tool_choice_param.py', reloading
+2025-07-22 13:47:53,191 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\types\\chat\\chat_completion_tool_param.py', reloading
+2025-07-22 13:47:53,196 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\types\\shared_params\\function_definition.py', reloading
+2025-07-22 13:47:53,207 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\types\\chat\\chat_completion.py', reloading
+2025-07-22 13:47:53,214 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\_models.py', reloading
+2025-07-22 13:47:53,248 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\pydantic\\_internal\\_model_construction.py', reloading
+2025-07-22 13:47:53,301 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\types\\chat\\chat_completion_chunk.py', reloading
+2025-07-22 13:47:53,375 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\pydantic\\_internal\\_generate_schema.py', reloading
+2025-07-22 13:47:53,478 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\pydantic\\_internal\\_decorators.py', reloading
+2025-07-22 13:47:53,663 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\types\\completion_usage.py', reloading
+2025-07-22 13:47:53,668 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\types\\chat\\chat_completion_message.py', reloading
+2025-07-22 13:47:53,685 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\groq\\types\\chat\\chat_completion_message_tool_call.py', reloading

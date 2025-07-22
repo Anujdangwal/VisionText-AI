@@ -1,0 +1,5 @@
+2025-07-22 14:00:32,137 - root - INFO - All custom module imports succeeded.
+2025-07-22 14:00:32,137 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 14:00:32,155 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 14:00:49,228 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading
+2025-07-22 14:00:49,228 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading

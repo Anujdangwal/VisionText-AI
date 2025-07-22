@@ -1,0 +1,6 @@
+2025-07-22 13:36:48,057 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:36:48,066 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 13:36:48,071 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 13:36:48,984 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\app.py', reloading
+2025-07-22 13:36:48,984 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\app.py', reloading
+2025-07-22 13:36:49,028 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\app.py', reloading

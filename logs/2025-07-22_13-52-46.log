@@ -1,0 +1,36 @@
+2025-07-22 13:52:48,994 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:52:49,010 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 13:52:49,010 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 13:52:57,028 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:52:57] "GET / HTTP/1.1" 200 -
+2025-07-22 13:52:58,658 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:52:58] "GET /summarize HTTP/1.1" 200 -
+2025-07-22 13:53:03,581 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:53:03,716 - root - WARNING - Document is very long (2956 chars). Truncating.
+2025-07-22 13:53:03,716 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:53:04,199 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:53:04,840 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 13:53:04,852 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:53:04,858 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:53:04] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:53:17,737 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds.pdf
+2025-07-22 13:53:17,805 - root - WARNING - Document is very long (2965 chars). Truncating.
+2025-07-22 13:53:17,805 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:53:18,310 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:53:18,842 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 13:53:18,847 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds.pdf
+2025-07-22 13:53:18,850 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:53:18] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:53:32,023 - root - INFO - Received PDF for summarization: static\uploaded\sample-local-pdf.pdf
+2025-07-22 13:53:32,044 - root - WARNING - Document is very long (9329 chars). Truncating.
+2025-07-22 13:53:32,044 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:53:32,577 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:53:33,128 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 13:53:33,132 - root - INFO - Deleted uploaded file: static\uploaded\sample-local-pdf.pdf
+2025-07-22 13:53:33,133 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:53:33] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:53:47,800 - root - INFO - Received PDF for summarization: static\uploaded\Assignment___NLP_Introduction_and_Text_Preprocessing.pdf
+2025-07-22 13:53:47,807 - root - WARNING - Document is very long (229 chars). Truncating.
+2025-07-22 13:53:47,808 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:53:48,349 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:53:48,872 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 13:53:48,876 - root - INFO - Deleted uploaded file: static\uploaded\Assignment___NLP_Introduction_and_Text_Preprocessing.pdf
+2025-07-22 13:53:48,877 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:53:48] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:54:26,203 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\app.py', reloading
+2025-07-22 13:54:26,203 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\app.py', reloading
+2025-07-22 13:54:26,249 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\app.py', reloading

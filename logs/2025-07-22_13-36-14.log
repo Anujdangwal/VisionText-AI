@@ -1,0 +1,26 @@
+2025-07-22 13:36:16,352 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:36:16,360 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 13:36:16,365 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 13:36:36,903 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\__init__.py', reloading
+2025-07-22 13:36:36,905 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\app.py', reloading
+2025-07-22 13:36:36,932 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\sansio\\app.py', reloading
+2025-07-22 13:36:36,939 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\sansio\\scaffold.py', reloading
+2025-07-22 13:36:36,973 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\globals.py', reloading
+2025-07-22 13:36:36,973 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\wrappers.py', reloading
+2025-07-22 13:36:36,973 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\werkzeug\\wrappers\\__init__.py', reloading
+2025-07-22 13:36:36,973 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\werkzeug\\wrappers\\request.py', reloading
+2025-07-22 13:36:36,973 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\werkzeug\\sansio\\request.py', reloading
+2025-07-22 13:36:36,973 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\templating.py', reloading
+2025-07-22 13:36:36,981 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\jinja2\\__init__.py', reloading
+2025-07-22 13:36:36,984 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\jinja2\\environment.py', reloading
+2025-07-22 13:36:37,006 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\json\\__init__.py', reloading
+2025-07-22 13:36:37,008 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\werkzeug\\wrappers\\response.py', reloading
+2025-07-22 13:36:37,017 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\werkzeug\\sansio\\response.py', reloading
+2025-07-22 13:36:37,024 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\helpers.py', reloading
+2025-07-22 13:36:37,030 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\werkzeug\\utils.py', reloading
+2025-07-22 13:36:37,043 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\dotenv\\__init__.py', reloading
+2025-07-22 13:36:37,053 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\dotenv\\main.py', reloading
+2025-07-22 13:36:37,073 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\config.py', reloading
+2025-07-22 13:36:37,084 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\flask\\typing.py', reloading
+2025-07-22 13:36:37,089 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\werkzeug\\datastructures\\__init__.py', reloading
+2025-07-22 13:36:37,114 - werkzeug - INFO -  * Detected change in 'C:\\Users\\dangw\\anaconda3\\Lib\\site-packages\\werkzeug\\_internal.py', reloading

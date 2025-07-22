@@ -1,0 +1,9 @@
+2025-07-22 13:38:36,240 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:38:36,288 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:10000
+ * Running on http://192.168.1.10:10000
+2025-07-22 13:38:36,288 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-22 13:38:36,302 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-22 13:40:00,145 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)
+2025-07-22 13:44:01,873 - werkzeug - INFO -  * Restarting with watchdog (windowsapi)

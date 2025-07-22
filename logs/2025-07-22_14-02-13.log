@@ -1,0 +1,27 @@
+2025-07-22 14:02:17,082 - root - INFO - All custom module imports succeeded.
+2025-07-22 14:02:17,097 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 14:02:17,097 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 14:02:19,477 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 14:02:19,643 - root - WARNING - Document is very long (2956 chars). Truncating.
+2025-07-22 14:02:19,643 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 14:02:20,264 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 14:02:20,998 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 14:02:21,007 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 14:02:21,011 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 14:02:21] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 14:02:51,566 - root - INFO - Received PDF for summarization: static\uploaded\Anuj_resume.pdf
+2025-07-22 14:02:51,589 - root - WARNING - Document is very long (3704 chars). Truncating.
+2025-07-22 14:02:51,589 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 14:02:52,175 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 14:02:52,785 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 14:02:52,974 - root - INFO - Deleted uploaded file: static\uploaded\Anuj_resume.pdf
+2025-07-22 14:02:52,975 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 14:02:52] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 14:03:08,544 - root - INFO - Received PDF for summarization: static\uploaded\imgtopdf_1801251013043-Editable-Copy.pdf
+2025-07-22 14:03:08,546 - root - WARNING - Document is very long (1557 chars). Truncating.
+2025-07-22 14:03:08,546 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 14:03:09,096 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 14:03:09,613 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 14:03:09,613 - root - INFO - Deleted uploaded file: static\uploaded\imgtopdf_1801251013043-Editable-Copy.pdf
+2025-07-22 14:03:09,613 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 14:03:09] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 14:03:16,666 - root - INFO - Received PDF for summarization: static\uploaded\imgtopdf_1801251013043.pdf
+2025-07-22 14:03:16,678 - root - INFO - Deleted uploaded file: static\uploaded\imgtopdf_1801251013043.pdf
+2025-07-22 14:03:16,680 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 14:03:16] "POST /summarize HTTP/1.1" 200 -

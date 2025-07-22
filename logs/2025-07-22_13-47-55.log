@@ -1,0 +1,14 @@
+2025-07-22 13:47:58,437 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:47:58,446 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 13:47:58,451 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 13:49:39,458 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:49:39,688 - root - WARNING - Document is very long (2956 chars). Truncating.
+2025-07-22 13:49:39,688 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:49:40,978 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:49:41,623 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-22 13:49:41,626 - root - ERROR - Error getting completion from Groq LLM: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-07-22 13:49:41,628 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:49:41,642 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:49:41] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:50:47,004 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\pipeline\\groq_llm_model.py', reloading
+2025-07-22 13:50:47,088 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\pipeline\\groq_llm_model.py', reloading
+2025-07-22 13:50:47,228 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\pipeline\\groq_llm_model.py', reloading

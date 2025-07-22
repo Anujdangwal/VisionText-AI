@@ -1,0 +1,16 @@
+2025-07-22 14:00:53,192 - root - INFO - All custom module imports succeeded.
+2025-07-22 14:00:53,199 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 14:00:53,203 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 14:00:54,777 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 14:00:54,844 - root - WARNING - Document is very long (2956 chars). Truncating.
+2025-07-22 14:00:54,844 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 14:00:55,210 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 14:00:55,882 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 14:00:55,882 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 14:00:55,905 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 14:00:55] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 14:02:11,777 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading
+2025-07-22 14:02:11,777 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading
+2025-07-22 14:02:11,832 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading
+2025-07-22 14:02:12,518 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading
+2025-07-22 14:02:12,518 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading
+2025-07-22 14:02:12,544 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\components\\pdf_reader.py', reloading

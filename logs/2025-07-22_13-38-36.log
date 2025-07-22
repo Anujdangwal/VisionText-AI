@@ -1,0 +1,33 @@
+2025-07-22 13:38:39,437 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:38:39,446 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 13:38:39,450 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 13:38:41,956 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:38:42,022 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:38:42,454 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:38:42,790 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-22 13:38:42,790 - root - ERROR - Error getting completion from Groq LLM: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-07-22 13:38:42,797 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:38:42,808 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:38:42] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:38:49,545 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:38:49,623 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:38:50,085 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:38:50,213 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-22 13:38:50,214 - root - ERROR - Error getting completion from Groq LLM: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-07-22 13:38:50,217 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:38:50,219 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:38:50] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:38:56,643 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:38:56,710 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:38:57,072 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:38:57,177 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-07-22 13:38:57,178 - root - ERROR - Error getting completion from Groq LLM: Error code: 401 - {'error': {'message': 'Invalid API Key', 'type': 'invalid_request_error', 'code': 'invalid_api_key'}}
+2025-07-22 13:38:57,178 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:38:57,184 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:38:57] "POST /summarize HTTP/1.1" 200 -
+2025-07-22 13:39:00,656 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:39:00] "GET / HTTP/1.1" 200 -
+2025-07-22 13:39:01,728 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:39:01] "GET /image_captioning HTTP/1.1" 200 -
+2025-07-22 13:39:06,889 - root - INFO - Image received for LLM processing: static\uploaded\right-kidney-stone.jpg
+2025-07-22 13:39:06,890 - root - INFO - GeminiMultimodalLLM initialized with model: gemini-1.5-flash
+2025-07-22 13:39:13,420 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:39:13] "POST /image_captioning HTTP/1.1" 200 -
+2025-07-22 13:39:13,455 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:39:13] "GET /static/uploaded/right-kidney-stone.jpg HTTP/1.1" 200 -
+2025-07-22 13:39:16,210 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:39:16] "GET /image_captioning HTTP/1.1" 200 -
+2025-07-22 13:39:57,730 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\pipeline\\prediction_pipeline.py', reloading
+2025-07-22 13:39:57,732 - werkzeug - INFO -  * Detected change in 'E:\\projects\\medical bot\\src\\pipeline\\prediction_pipeline.py', reloading

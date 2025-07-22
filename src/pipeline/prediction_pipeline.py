@@ -3,9 +3,6 @@ import sys
 import logging
 import numpy as np
 from PIL import Image
-import tensorflow as tf
-from tensorflow.keras.preprocessing.image import img_to_array
-from tensorflow.keras.applications.densenet import preprocess_input
 
 
 from src.logger import logging
@@ -29,7 +26,7 @@ def summarize_pdf_document(pdf_path: str, model_name: str = "llama3-8b-8192") ->
         if not text_content.strip():
             return "The PDF is empty or no text could be extracted."
 
-        MAX_LLM_INPUT_LENGTH = 5000
+        MAX_LLM_INPUT_LENGTH = 50
         if len(text_content) > MAX_LLM_INPUT_LENGTH:
             logging.warning(f"Document is very long ({len(text_content)} chars). Truncating.")
             text_content = text_content[:MAX_LLM_INPUT_LENGTH].strip() + "..."

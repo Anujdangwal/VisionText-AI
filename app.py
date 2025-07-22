@@ -1,11 +1,10 @@
 # app.py
 
 import os
-TF_ENABLE_ONEDNN_OPTS = 0  # Ensure TF uses compatible kernel ops
 
 import sys
 import logging
-from flask import Flask, request, render_template, jsonify, redirect, url_for
+from flask import Flask, request, render_template
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 
@@ -47,7 +46,6 @@ def allowed_file(filename, allowed_extensions):
 @app.route('/')
 def home():
     return render_template('index.html')
-
 
 @app.route('/summarize', methods=['GET', 'POST'])
 def summarize_page():

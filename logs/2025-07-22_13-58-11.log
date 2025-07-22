@@ -1,0 +1,12 @@
+2025-07-22 13:58:14,871 - root - INFO - All custom module imports succeeded.
+2025-07-22 13:58:14,880 - werkzeug - WARNING -  * Debugger is active!
+2025-07-22 13:58:14,885 - werkzeug - INFO -  * Debugger PIN: 515-084-624
+2025-07-22 13:58:14,918 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:58:14] "GET / HTTP/1.1" 200 -
+2025-07-22 13:58:16,637 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:58:16] "GET /summarize HTTP/1.1" 200 -
+2025-07-22 13:58:21,468 - root - INFO - Received PDF for summarization: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:58:21,536 - root - WARNING - Document is very long (2956 chars). Truncating.
+2025-07-22 13:58:21,536 - root - INFO - Sending text to LLM for summarization...
+2025-07-22 13:58:21,903 - root - INFO - GroqLLM initialized with model: llama3-70b-8192
+2025-07-22 13:58:22,720 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-07-22 13:58:22,725 - root - INFO - Deleted uploaded file: static\uploaded\Resume_ds_1.pdf
+2025-07-22 13:58:22,728 - werkzeug - INFO - 127.0.0.1 - - [22/Jul/2025 13:58:22] "POST /summarize HTTP/1.1" 200 -
